@@ -266,9 +266,9 @@ const Footer = () => (
         <div className="container mx-auto px-6 py-8 text-center text-gray-400">
             <div className="flex justify-center space-x-6 mb-4">
                 {/* TODO: Add the URL to your GitHub profile in the href attribute. */}
-                <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors duration-300"><GithubIcon /></a>
+                <a href="https://github.com/Arnab-Mandal1" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors duration-300"><GithubIcon /></a>
                 {/* TODO: Add the URL to your LinkedIn profile in the href attribute. */}
-                <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors duration-300"><LinkedinIcon /></a>
+                <a href="www.linkedin.com/in/arnab-mandal-004680265" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors duration-300"><LinkedinIcon /></a>
             </div>
             <p>&copy; {new Date().getFullYear()} {personalDetails.name}. All Rights Reserved.</p>
         </div>
