@@ -1,4 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+
+// --- TYPE DEFINITIONS ---
+// Defines the structure for a navigation link object.
+interface NavLink {
+    id: string;
+    name: string;
+}
+
+// Defines the type for the props passed to the Header component.
+interface HeaderProps {
+    navLinks: NavLink[];
+}
+
 
 // --- SVG ICONS ---
 // Using inline SVGs for icons to keep the component self-contained.
@@ -83,13 +96,13 @@ const education = {
 // --- COMPONENTS ---
 // You shouldn't need to edit the components below unless you want to change the structure or styling.
 
-const Header = ({ navLinks }) => {
+const Header: React.FC<HeaderProps> = ({ navLinks }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('hero');
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = navLinks.map(link => document.getElementById(link.id));
+            const sections = navLinks.map((link: NavLink) => document.getElementById(link.id));
             const scrollPosition = window.scrollY + 100;
 
             for (const section of sections) {
@@ -104,9 +117,12 @@ const Header = ({ navLinks }) => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [navLinks]);
 
-    const handleLinkClick = (e, id) => {
+    const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
         e.preventDefault();
-        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
         setIsMenuOpen(false);
     };
 
@@ -118,7 +134,7 @@ const Header = ({ navLinks }) => {
                 </a>
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex space-x-6">
-                    {navLinks.map(link => (
+                    {navLinks.map((link: NavLink) => (
                         <a key={link.id} href={`#${link.id}`} onClick={(e) => handleLinkClick(e, link.id)}
                            className={`text-lg hover:text-cyan-400 transition-colors duration-300 relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-cyan-400 after:transition-all after:duration-300 ${activeSection === link.id ? 'text-cyan-400 after:w-full' : 'text-gray-300'}`}>
                             {link.name}
@@ -135,7 +151,7 @@ const Header = ({ navLinks }) => {
             {/* Mobile Navigation */}
             <div className={`fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-95 transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out md:hidden z-40`}>
                 <nav className="flex flex-col items-center justify-center h-full space-y-8">
-                    {navLinks.map(link => (
+                    {navLinks.map((link: NavLink) => (
                         <a key={link.id} href={`#${link.id}`} onClick={(e) => handleLinkClick(e, link.id)} className="text-2xl text-gray-200 hover:text-cyan-400 transition-colors duration-300">
                             {link.name}
                         </a>
@@ -293,7 +309,7 @@ const Footer = () => (
 
 export default function App() {
     // Updated navLinks to remove "Projects"
-    const navLinks = [
+    const navLinks: NavLink[] = [
         { id: 'about', name: 'About' },
         { id: 'experience', name: 'Experience' },
         { id: 'skills', name: 'Skills' },
