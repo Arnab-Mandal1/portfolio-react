@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "homepage": "https://github.io/Arnab-Mandal1/portfolio-new",
+  "homepage": "https://Arnab-Mandal1.github.io/portfolio-new",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,8 +13,10 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.12",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "tailwindcss": "^4.1.12"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",

@@ -3,13 +3,13 @@ import React, { useState, useEffect } from 'react';
 // --- SVG ICONS ---
 // Using inline SVGs for icons to keep the component self-contained.
 const GithubIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-github">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-github">
         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
     </svg>
 );
 
 const LinkedinIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-linkedin">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-linkedin">
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
         <rect x="2" y="9" width="4" height="12"></rect>
         <circle cx="4" cy="4" r="2"></circle>
@@ -21,49 +21,62 @@ const LinkedinIcon = () => (
 
 const personalDetails = {
     // TODO: Add your full name.
-    name: "Arnab Mandal",
+    name: "Alex Doe",
     // TODO: Add your professional headline.
     headline: "Full-Stack Software Engineer",
     // TODO: Write a brief 1-2 sentence summary about yourself.
     summary: "A passionate Full-Stack Software Engineer specializing in building elegant, efficient, and scalable web applications. I thrive on turning complex problems into simple, beautiful, and intuitive designs.",
     // TODO: Add your email address.
-    email: "arnabmandal661@gmail.com",
+    email: "alex.doe@example.com",
     // TODO: Add the path to your resume PDF. Place the PDF in the `public` folder of your React project.
     resumeUrl: "/alex-doe-resume.pdf",
     // TODO: Add a URL to a professional headshot. You can use a service like Imgur or a placeholder like below.
-    imageUrl: "./my-portfolio-pic.jpg",
+    imageUrl: "https://placehold.co/400x400/E2E8F0/4A5568?text=AD",
 };
 
 const professionalExperience = [
     // TODO: Add your work experience here. You can add as many objects as you need.
     {
         // TODO: Add your job title.
-        title: "Full Stack web development trainee",
+        title: "Senior Software Engineer",
         // TODO: Add the company name.
-        company: "Topstack",
+        company: "Innovate Inc.",
         // TODO: Add the dates of your employment.
-        dates: "Aug 2025 - Present",
+        dates: "Jan 2021 - Present",
         // TODO: Add a description of your responsibilities and achievements. Each string is a bullet point.
         description: [
-            "I am learning about Full Stack web development and build real life projects"
+            "Led the development of a new microservices-based architecture, improving system scalability by 200%.",
+            "Mentored junior developers, conducting code reviews and promoting best practices in an Agile environment.",
+            "Reduced API response times by 40% through performance tuning and query optimization.",
+            "Collaborated with product managers to define feature requirements and technical specifications."
+        ]
+    },
+    {
+        title: "Software Engineer",
+        company: "Tech Solutions LLC",
+        dates: "Jun 2018 - Dec 2020",
+        description: [
+            "Developed and maintained full-stack features for a high-traffic e-commerce platform using React and Node.js.",
+            "Implemented a new CI/CD pipeline, reducing deployment time by 75%.",
+            "Wrote comprehensive unit and integration tests, increasing code coverage to over 90%.",
         ]
     }
 ];
 
 const skills = {
     // TODO: Add your skills, grouped by category.
-    languages: ["JavaScript (ES6+)", "TypeScript", "Java", "HTML5", "CSS3"],
-    frameworks: ["React", "Node.js", "Express",],
-    databases: ["MongoDB","MySQL"],
-    tools: ["Docker", "Kubernetes", "AWS", "Git"]
+    languages: ["JavaScript (ES6+)", "TypeScript", "Python", "Java", "HTML5", "CSS3"],
+    frameworks: ["React", "Node.js", "Express", "Vue.js", "Django", "Spring Boot"],
+    databases: ["PostgreSQL", "MongoDB", "Redis", "MySQL"],
+    tools: ["Docker", "Kubernetes", "AWS", "Git", "Jenkins", "Terraform"]
 };
 
 const education = {
     // TODO: Add your education details.
-    institution: "Supreme Knowledge Foundation Group of Institutions",
-    degree: "Bachelor of Technology in Computer Science",
-    graduationDate: "june 2025",
-    details: "I am in final year"
+    institution: "University of Technology",
+    degree: "Bachelor of Science in Computer Science",
+    graduationDate: "May 2018",
+    details: "Graduated with Honors, GPA: 3.8/4.0"
 };
 
 
@@ -159,7 +172,7 @@ const About = () => (
             <h2 className="text-4xl font-bold text-center text-white mb-12">About Me</h2>
             <div className="flex flex-col md:flex-row items-center gap-12">
                 <div className="md:w-1/3">
-                    <img src={personalDetails.imageUrl} alt={personalDetails.name} className="rounded-full w-64 h-64 md:w-80 md:h-80 mx-auto shadow-2xl border-4 border-cyan-400" />
+                    <img src={personalDetails.imageUrl} alt={personalDetails.name} className="rounded-full w-64 h-64 md:w-80 md-h-80 mx-auto shadow-2xl border-4 border-cyan-400" />
                 </div>
                 <div className="md:w-2/3 text-gray-300 text-lg">
                     <p className="mb-4">
@@ -266,9 +279,9 @@ const Footer = () => (
         <div className="container mx-auto px-6 py-8 text-center text-gray-400">
             <div className="flex justify-center space-x-6 mb-4">
                 {/* TODO: Add the URL to your GitHub profile in the href attribute. */}
-                <a href="https://github.com/Arnab-Mandal1" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors duration-300"><GithubIcon /></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors duration-300"><GithubIcon /></a>
                 {/* TODO: Add the URL to your LinkedIn profile in the href attribute. */}
-                <a href="www.linkedin.com/in/arnab-mandal-004680265" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors duration-300"><LinkedinIcon /></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors duration-300"><LinkedinIcon /></a>
             </div>
             <p>&copy; {new Date().getFullYear()} {personalDetails.name}. All Rights Reserved.</p>
         </div>
