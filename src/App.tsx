@@ -34,7 +34,7 @@ const LinkedinIcon = () => (
 
 const personalDetails = {
     // TODO: Add your full name.
-    name: "Alex Doe",
+    name: "Arnab Mandal",
     // TODO: Add your professional headline.
     headline: "Full-Stack Software Engineer",
     // TODO: Write a brief 1-2 sentence summary about yourself.
