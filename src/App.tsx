@@ -44,7 +44,7 @@ const personalDetails = {
     // TODO: Add the path to your resume PDF. Place the PDF in the `public` folder of your React project.
     resumeUrl: "/alex-doe-resume.pdf",
     // TODO: Add a URL to a professional headshot. You can use a service like Imgur or a placeholder like below.
-    imageUrl: "https://placehold.co/400x400/E2E8F0/4A5568?text=AD",
+    imageUrl: "public/my-portfolio-pic.jpg",
 };
 
 const professionalExperience = [
